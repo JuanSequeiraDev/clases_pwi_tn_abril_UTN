@@ -16,3 +16,7 @@
 -git add .
 -git commit -m "comentario"
 -git push
+
+**Para ver que origen remoto tengo**
+
+git remote -v
