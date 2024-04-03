@@ -1,4 +1,4 @@
-Si empezamos desde 0
+# Si empezamos desde 0
 
 -git init
 -git add .
@@ -7,11 +7,11 @@ Si empezamos desde 0
 -git remote and origin "link"
 -git push -u origin main
 
-Ahora el repositorio esta subido a github 
+**Ahora el repositorio esta subido a github**
 
-<!-- Podemos usar git status para obtener una información detallada del estado de nuestro repositorio -->
+**Podemos usar git status para obtener una información detallada del estado de nuestro repositorio**
 
-<!-- Para Actualizaciones -->
+# Para Actualizaciones
 
 -git add .
 -git commit -m "comentario"
