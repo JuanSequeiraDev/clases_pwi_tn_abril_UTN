@@ -1,0 +1,30 @@
+body{/* Selector de elementos */
+
+}
+
+h2{
+    color: rgb(255, 0, 221);
+    font-size: 50px;
+}
+
+.subtitulo-especial{ /* Class selector, tiene una mayor prioridad sobre h2 debido a su espicifisidad */
+    color: green;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 80px;
+}
+
+*{     /* el "*" es un selector universal */
+    font-family: sans-serif; /* Important, pasa al mayor valor */
+}
+
+.subtitulo-especial{
+    color: yellow;
+} /* En una misma especifisidad, prioriza el orden o la "cascada" */
+
+#super-especial{ /* Selector de ID, mas especifico que el class al no poder repetirse */
+    color: blue;
+}
+
+.super-especial{
+    color: red;
+}
