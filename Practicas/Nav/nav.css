@@ -1,0 +1,33 @@
+
+
+*{
+    font-family: sans-serif;
+    box-sizing: border-box;
+    color: rgba(226, 226, 226, 0.781);
+    font-weight: 100;
+    font-size: 15px;
+}
+
+
+.list{
+    background-color: rgb(46, 45, 45);
+    display: inline-block;
+
+}
+
+li{
+    margin: 5px;
+}
+
+.father{
+    color: white;
+    font-weight: 800;
+}
+
+.desplegados{
+    margin-left: -40px;
+}
+
+.desplegados2{
+    margin-left: -30px;
+}
