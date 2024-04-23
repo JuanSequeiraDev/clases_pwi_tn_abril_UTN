@@ -1,0 +1,39 @@
+/* Flexbox es utilizada para mover, acomoda y colocar elementos. No es la unica forma de hacerlo pero si la mas comoda y adaptada.           Tambien sirve para acomodar multiples elementos !Utilizar siempre en el padre! */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+.padre{
+    /* padding: 0 50px; (se suele usar con space-between)*/
+    background-color: green;
+    height: 100vh;
+    /* VH = ViewportHeight (es una medida relativa, es decir que no siempre vale lo mismo ya que esta relacionada a cada computadora)*/
+    width: 100vw; /* VW = ViewportWidth */
+    display: flex;
+    flex-direction: column;
+    gap: 50px; 
+    justify-content: space-between; 
+    align-items: center; 
+    
+    /* Espacio entre hijos (existen row-gap y collumn-gap)*/
+    /* flex-wrap: wrap;  */ /* Por defecto es nowrap */
+    /* Justify content afecta al Eje x y align-items al Eje Y, al cambiar de row a column se invierten los Ejes que alteran ambos */
+}
+
+
+.padre .hijo{      /* Mayor especificidad */
+    width: 200px;
+    height: 200px;
+    border-radius: 10px;
+    background-color: blueviolet;
+
+    /* display: inline-block; | Usando este comando se ven los espaciados entre los divs */
+}
+
+.padre .especial{
+    background-color: red;
+}
