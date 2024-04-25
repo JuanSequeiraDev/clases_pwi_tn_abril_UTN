@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Inter", sans-serif;
+}
+
+/* Color card style: */
+
+.colors-card{
+    display: flex;
+    gap: 20px;
+    flex-direction: row;
+    width: calc(250px * 4 + 20px * 3 + 20px * 2);
+    flex-wrap: wrap;
+    padding: 0 20px;
+}
+
+.color-card{
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    gap: 12px;
+}
+
+.color-card .colors{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 250px;
+    background-color: aqua;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+/* nth-child() para llamar hijos por orden */
+.color-card .colors .color:nth-child(1){
+    height: 40%;
+}
+
+.color-card .colors .color:nth-child(2){
+    height: 30%;
+}
+
+.color-card .colors .color:nth-child(3){
+    height: 17%;
+}
+
+.color-card .colors .color:nth-child(4){
+    height: 13%;
+}
+
+.color-card .color-card-controls{
+    display: flex;
+    flex-direction: row; /* default */
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.color-card .color-card-controls .btn-like{
+height: 38px;
+padding: 0 14px;
+display: flex;
+align-items: center;
+justify-content: center;
+font-size: 14px;
+background-color: #FFFFFF;
+border: 1px solid rgba(0, 0, 0, 0.116);
+border-radius: 10px;
+gap: 5px;
+}
+
+.color-card .color-card-controls .time{
+    color: #959595;
+    font-size: 12px;
+}
+
+/* Color card style END */
