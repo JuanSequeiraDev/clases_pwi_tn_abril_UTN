@@ -1,0 +1,67 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 16px;
+}
+
+/* nav{
+    display: none; (desaparece los elementos) */
+
+
+header{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    align-items: center;
+}
+
+header h2{
+    font-size: 2.5rem;
+}
+
+nav{
+    display: flex;
+    gap: 15px;
+}
+
+.link{
+    font-size: 1.2rem;
+}
+
+header button{
+    display: none;
+}
+/* un rem equivale al font-size del html */
+
+.producto{
+    font-size: 10px;
+}
+
+/* em Equivale al font-size del padre mas cercano, suele usarse en dashboards o webs bento donde no hay espaciados tan definidos*/
+p{
+    font-size: 1em;
+}
+
+@media screen and (max-width: 830px) {
+    html{
+        font-size: 14px; /* Utilizar para fuentes logos y texto */
+    }
+    /* nav{
+        display: none;
+    }
+    header button{
+        display: flex;
+    } */
+}
+
+@media screen and (max-width: 530px){
+    html{
+        font-size:12px; 
+    }
+}

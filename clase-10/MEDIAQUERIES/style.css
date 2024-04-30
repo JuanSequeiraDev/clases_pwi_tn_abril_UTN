@@ -1,0 +1,45 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+.padre{
+    width: 100vw;
+    /* Recomendable no usar height ya que es mejor que el contenido que esta dentro del padre defina el tamaño del contenedor */
+    background-color: blueviolet;
+    color: white;
+    display: flex;
+    flex-direction: column; /* suele usarse */
+    align-items: center;
+    gap: 30px;
+    padding: 20px;
+}   
+
+.hijo{
+    width: 100%; /* Se usa porcentaje y se limita con padding */
+    height: 250px;
+    background-color: white;
+    border: 1px solid black;
+    border-radius:15px;
+    max-width: 500px;
+}
+
+@media screen and (min-width: 800px) { /* En caso de pasar de pagina mobile a pagina web se utiliza max width */
+    .padre{
+        flex-direction: row;
+    }
+    .hijo{
+        background-color: aqua;
+    }
+}
+
+/* Se pueden utilizar varias mediaqueries */
+
+@media screen and (min-width: 900px) {   /* Tener atencion a la especificidad y a la cascada al usar esta propiedad */
+    .padre{
+        flex-direction: row;
+    }
+}

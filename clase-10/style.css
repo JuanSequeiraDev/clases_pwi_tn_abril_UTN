@@ -1,0 +1,64 @@
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.padre{
+    width: 100vw;
+    height: 500vh;
+    background-color: green;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    margin-top: 200px;
+    position: relative;
+}
+
+.hijo{
+width: 200px;
+height: 200px;
+background-color: black;
+border: 1px solid red;
+}
+
+.hijo:nth-child(1){
+background-color: brown;
+}
+
+.hijo:nth-child(2){
+    background-color: blue;
+    position: sticky; /* static es el valor por defecto, relative es relativo a su posicion orignal y absolute es una posicion exacta y    absoluta que ignora hasta el propio father, fixed es un elemento sobreposicionado a la pantalla que no se mueve con ella*/
+
+    left: 200px; /* Left tiene prioridad sobre right */
+    top: 10px; /* top tiene mas prioridad */
+    z-index: 1;
+}
+
+.hijo:nth-child(3){
+    background-color: lightgreen;
+    z-index: 2; /* Valor en el eje Z (eje de profundidad) */
+}
+
+.buscador-contenedor{
+    position: relative;
+    width: 300px;
+    display: flex;
+    align-items: center;
+}
+
+.buscador-contenedor input{
+    width: 100%;
+}
+
+.buscador-contenedor .lupita{
+    width: 16px;
+    height: 16px;
+    background-color: red;
+    border-radius: 100%;
+    position: absolute;
+    right: 10px;
+}
