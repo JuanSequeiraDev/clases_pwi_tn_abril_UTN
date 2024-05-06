@@ -1,0 +1,152 @@
+@import url(./font.css);
+@import url(./normalize.css);
+@import url(./imports.css);
+@import url(./variables.css);
+
+
+.bg-primary{
+    background-color: var(--primary-color);
+}
+
+.bg-primary-bold{
+    background-color: var(--primary-color-bold);
+}
+
+/* Lista */
+
+.lista{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.lista li{
+    display: flex;
+    gap: 5px;
+}
+
+/* Secciones */
+
+/* Seccion secundaria */
+
+.seccion{
+    padding: 64px 0px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+}
+
+.seccion .seccion-cabecera{
+    padding: 0 16px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 320px;  
+}
+
+.seccion .reseñas-contenedor{
+    padding: 0 16px;
+    max-width: 320px;
+    width: 100%;
+}
+
+.seccion .seccion-cabecera .seccion-contenedor{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.seccion .seccion-cabecera .img-container{
+    width: 100%;                              /* Al utilizar width:100% , se le da el width de su father por eso al pasarlo de un hijo al otro se termina acomodando todos a una misma width */
+    padding: 25px;
+}
+
+.seccion .seccion-cabecera .img-container img{
+    width: 100%;
+}
+
+/* Tarjeta de reseña */
+
+.reseñas-contenedor{
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.reseñas-contenedor .caja-reseña{
+    padding: 32px;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.reseñas-contenedor .caja-reseña .reseña-text{
+    
+}
+
+.caja-reseña img{
+    width: 205px;
+}
+
+.reseñas-contenedor .caja-reseña a{
+    display: flex;
+    justify-content: end;
+    color: var(--secondary-text-color);
+}
+
+/* Mediaqueries */
+
+@media screen and (min-width: 650px) {
+    .seccion .seccion-cabecera{
+        max-width: 80%;
+    }
+    .seccion .reseñas-contenedor{
+        max-width: 80%;
+    }
+}
+
+@media screen and (min-width: 1050px) {
+    .seccion{
+        align-items: center;
+        padding: 64px 10px;
+    }
+
+    .seccion .seccion-cabecera{
+        width: 80%;
+        max-width: none;
+        padding: 0 32px;
+    }
+
+    .seccion .seccion-cabecera .img-container{
+        
+    }
+
+    .lista{
+        gap: 25px;
+    }
+
+    .seccion .reseñas-contenedor{
+        max-width: none;
+        width: 70%;
+        gap: 40px;
+    }
+}
+
+@media screen and (min-width: 1600px) {
+    .seccion{
+        align-items: center;
+        padding: 64px 40px;
+    }
+
+    .seccion .seccion-cabecera{
+        flex-direction: row-reverse;
+    }
+
+    .seccion .reseñas-contenedor{
+        flex-direction: row;
+    }
+}
