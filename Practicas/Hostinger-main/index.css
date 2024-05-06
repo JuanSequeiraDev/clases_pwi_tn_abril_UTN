@@ -84,10 +84,6 @@
     gap: 16px;
 }
 
-.reseñas-contenedor .caja-reseña .reseña-text{
-    
-}
-
 .caja-reseña img{
     width: 205px;
 }
@@ -119,10 +115,6 @@
         width: 80%;
         max-width: none;
         padding: 0 32px;
-    }
-
-    .seccion .seccion-cabecera .img-container{
-        
     }
 
     .lista{
