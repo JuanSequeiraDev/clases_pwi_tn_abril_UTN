@@ -140,17 +140,17 @@ Siempre devuelven booleanos
 
 Van a escribir el tipo de dato y el resultado
 
-5 + null
+5 + null number 5
 
-3 + 0
+3 + 0 number 3
 
-4 - '8'
+4 - '8' number -4
 
-'pepe + ''
+'pepe' + '' string 'pepe'
 
-NaN + ''
+NaN + '' string NaN
 
-true === 1
+true === 1 boolean false
 
 Ej: 
 
