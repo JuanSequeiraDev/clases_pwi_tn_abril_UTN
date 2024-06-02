@@ -89,7 +89,7 @@ function obtenerDato(data){
 return { email: email, password: password}
 } */
 
-const DATOS = {
+const DATOS = Object.freeze({
     EMAIL: {
         mensaje: 'Bienvenido, por favor ingrese email',
         error: 'Error, por favor ingrese un email valido',
@@ -100,7 +100,9 @@ const DATOS = {
         error: 'error ingrese una contrasena de min 6 caracteres y una mayuscula',
         validacion: validarPassword
     },
-}
+})
+/* Object freeze evita la modificacion de un objeto */
+DATOS.NEW_DATE = 'pepe'
 
 function login() {
     let email = obtenerDato(DATOS.EMAIL)
@@ -165,7 +167,7 @@ const CALCUDATOS = {
     },
 }
 
-console.log(calculadora())
+/* console.log(calculadora()) */
 
 //Otro metodo
 
@@ -206,3 +208,179 @@ console.log(calculadora())
 console.log(calculadora()) */
 
 //HISTORIAL
+
+/* historial = [
+    {
+        accion: 'CALCULAR' ,
+        operacion: '+',
+        a: 1,
+        b: 2,
+        resultado: 2 
+    },
+    {
+        accion: 'CALCULAR',
+        operacion: '-',
+        a: 1,
+        b: 2,
+        resultado: -1 
+    },
+] */
+
+/* function renderizarHistorial(historial){
+    const arrayDeElementos = historial.map(function(elemento){
+        return 'El historial es:' + '\n' +  'Accion: ' + elemento.accion + '\n' + 'Operacion: ' + elemento.operacion + '\n' + 'Numeros: ' +     elemento.a + ' , ' + elemento.b + '\n' + 'Resultado' + elmento.resultado
+    })
+    return arrayDeElementos.join('\n')
+} */
+
+/* console.log([1, 2 ,3].join('\n')) */
+
+function renderizarHistorial(historialRecibido){  /* {For of} recorre un array */
+    let listaStrHistorial = ''
+    for(const item of historialRecibido){
+        listaStrHistorial = listaStrHistorial + `
+        Accion: ${item.accion}
+        Operacion: ${item.operacion}
+        Numeros: ${item.a}, ${item.b}
+        Resultado: ${item.resultado}
+    `
+    }
+    return listaStrHistorial
+}
+
+/* console.log(renderizarHistorial(historial)) */
+
+/* Crear una funcion llamada
+elementoHistorial =  {
+        accion: 'CALCULAR',
+        operacion: '-',
+        a: 1,
+        b: 2,
+        resultado: -1 
+    }
+agregarAlHistorial(elmentoHistorial)
+Agregar el objeto al array global historial
+
+obtenerHistorial() que va a retornar el historial
+*/
+
+extraHistorial =  {
+    accion: 'CALCULAR',
+    operacion: '-',
+    a: 1,
+    b: 4,
+    resultado: 5 
+}
+
+function agregarAlHistorial(elementoHistorial){
+    const historial = obtenerHistorial()   //historial previo o []
+    historial.push(elementoHistorial)
+    const historialStr = JSON.stringify(historial)
+    localStorage.setItem('historial', historialStr)
+}
+
+function obtenerHistorial(){
+    const historialLocal = localStorage.getItem('historial')
+    return JSON.parse(historialLocal)
+}
+
+
+/* Verificando que un usuario que entra por primera vez tenga un historial */
+if(obtenerHistorial() === null){
+    /* Si no hay historial se guarda como array vacio */
+    localStorage.setItem('historial', JSON.stringify([]))
+}
+
+agregarAlHistorial({
+    accion: 'CALCULAR',
+    operacion: '-',
+    a: 1,
+    b: 2,
+    resultado: -1 
+})
+
+/* console.log(obtenerHistorial()) */
+console.log(renderizarHistorial(obtenerHistorial()))
+/* 
+    Variables globales  
+
+localStorage || sessionStorage 
+
+Metodos para modificarlas:       'funcionan para ambas'
+
+.setItem(key: 'string' , value: 'string')                    guarda/reemplaza un nuevo valor con la llave (key) que reciba
+
+.getItem(key: 'string')                        Permite obtener/retornar el valor asociado a una key. Si la key no existe, devuelve null
+
+.removeItem(key: 'string')                                       Elimina la key y el valor asociado a la key que recibe
+
+.clear()                                                          No recibe ningun dato, limpia el storage por clompeto
+*/
+
+/* let datoImportante = 'el mate se toma amargo' */
+
+/* localStorage.setItem('array', {}) */
+
+/* localStorage.setItem('importante', datoImportante) */
+
+/* localStorage.clear()*/
+
+/* JSON = JAVASCRIPT OBJECT NOTATION
+JSON es la variable global que usamos para acceder a los metodos .parse(), .stringify()
+
+Las reglas de JSON
+
+Si quiero escribir un array uso []
+Si quiero escribir un objeto uso {}
+Si quiero escribir un string uso estrictamente ""
+Si quiero escribir booleanos, null, undefined o numeros los sigo usando como antes
+SI ESCRIBEN OBJETOS O ARRAYS la ultima coma no va
+
+{
+    "nombre": "pepe",
+    "edad": 70, //esta coma da error
+}
+//Caso Correcto
+{
+    "nombre": "pepe",
+    "edad": 70
+}
+*/
+
+//Este string es transformable a objeto de JS / JSON
+let string = '{"username": "pepe"}' //Este string esta escrito en formato JSON
+
+
+//Transforma al formato objeto de js
+let stringComoObjeto = JSON.parse(string)
+console.log(stringComoObjeto)
+
+//Transforma al formato string de js
+/* JSON.stringify() */
+
+let objeto = {
+    nombre: 'pepe',
+    edad:70
+}
+
+const objetoEnString = JSON.stringify(objeto)  // '{"nombre": "pepe", "edad": 70}'
+console.log(objetoEnString)   
+
+/* 
+Transformar el array historial a string con notacion JSON y mostrarlo por alert
+
+AUTOCORRECION:
+La alerta no debe mostrar [object Object]
+*/
+
+/* const historialStringify = JSON.stringify(historial) */
+
+/* 
+En la funcion de agregar al historial vamos a hacer el push que veniamos haciendo 
+pero ademas vamos a guardar el historial en el local storage con la key historial
+*/
+
+
+/* 
+La funcion obtener historial debe tomar el historial de localStorage y retornarlo como array
+*/
