@@ -1,0 +1,7 @@
+.errorText{
+    color: rgb(136, 0, 0);
+}
+
+.inputs{
+    display: flex;
+}
