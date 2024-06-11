@@ -53,7 +53,7 @@ Si esta todo bien por consola diran 'exito'
 }
  */
 
-const formLoginHTML = document.getElementById('form-login')
+/* const formLoginHTML = document.getElementById('form-login')
 
 const validarUsername = (username) => {
     return /[A-Z]/.test(username) && /-/.test(username) && username.length >= 4;
@@ -88,13 +88,13 @@ formLoginHTML.addEventListener('submit', (event) =>{
     if(validarEmail(email) && validarUsername(username) && validarPassword(password)){
         console.log('exito')
     }
-})
+}) */
 
 
 //Metodo mas avanzado:
 
-/* 
-const validarMayuscula =(texto) =>{
+
+/* const validarMayuscula =(texto) =>{
     let textoMinuscula = texto.toLowerCase()
     return textoMinuscula !== texto
 }
@@ -122,7 +122,7 @@ const obtenerValoresFormulario = (formulario) => {
     const inputs = ['username', 'password', 'email']
     const inputsInfo = {}
     for(let input of inputs){
-        const spanErrorHTML = formulario.querySelector('.error-text-' + input)
+        const spanErrorHTML = document.querySelector('.error-text-' + input)
         const valor = formulario[input].value
         inputsInfo[input] = {
             errorHTML: spanErrorHTML,
@@ -155,8 +155,8 @@ const handleSubmit = (evento) =>{
     }
 }
 
-formLoginHTML.addEventListener('submit', handleSubmit)
-*/
+formLoginHTML.addEventListener('submit', handleSubmit) */
+
 
 
 
@@ -177,6 +177,89 @@ Codigo: string pero que tenga un # por delante  EJ: #aj504/ #pepe/ #2135
 
 Con mensajes de error propios
 */
+
+/* function validarNumero(numeroAValidar){
+    return (!(!numeroAValidar || isNaN(numeroAValidar)))
+} */
+
+
+/* const codigos = {
+    length: '#abcedenfiabfjiefjiafnjia'
+} */
+
+
+
+
+
+const buscarNumeral = (codigo) => {
+    if(codigo.indexOf('#') === 0){
+        return true
+    }
+    else{
+        return false
+    }
+}
+//console.log(codigos.length.indexOf('#'))
+
+const formProductosHTML = document.getElementById('form-productos')
+
+const VALIDACIONES = {
+    titulo: {
+        validacion:(texto) => texto.length >= 6 && texto ,
+        errorText:'El titulo no es valido'
+    },
+    precio: {
+        validacion:(texto) => !isNaN(texto) && texto,
+        errorText:'El precio no es un numero'
+    },
+    descripcion: {
+        validacion:(texto) => texto.length >= 100 && texto,
+        errorText:'La descripcion es muy corta'
+    },
+    stock: {
+        validacion:(texto) => !isNaN(texto) && texto,
+        errorText:'El stock no es un numero',
+    },
+    codigo: {
+        validacion:(texto) => buscarNumeral(texto),
+        errorText:'El formato del codigo no es valido'
+    }
+}
+
+const obtenerValoresDelFormulario = (formulario) => {
+    const inputs = ['titulo', 'precio', 'descripcion', 'stock', 'codigo']
+    const inputsInfo = {}
+
+    for(let input of inputs){
+        const spanErrorHTML = document.querySelector('.error-text-' + input)
+        const value = formulario[input].value
+        inputsInfo[input] = {
+            errorHTML: spanErrorHTML,
+            validacion: VALIDACIONES[input].validacion,
+            errorText: VALIDACIONES[input].errorText,
+            value: value
+        }
+    }
+    return inputsInfo
+}
+
+const handleSubmit = (event) =>{
+    event.preventDefault()
+    const formulario = event.target
+    const valoresFormulario = obtenerValoresDelFormulario(formulario)
+    console.log(valoresFormulario)
+    for(const propiedad in valoresFormulario){
+        const objetoInputFormulario = valoresFormulario[propiedad]
+        if(!objetoInputFormulario.validacion(objetoInputFormulario.value)){
+            objetoInputFormulario.errorHTML.innerText = objetoInputFormulario.errorText
+        }
+        else{
+            objetoInputFormulario.errorHTML.innerText = ''
+        }
+    }
+}
+
+formProductosHTML.addEventListener('submit', handleSubmit)
 
 
 
