@@ -220,7 +220,7 @@ const VALIDACIONES = {
         validacion:(texto) => !isNaN(texto) && texto,
         errorText:'El stock no es un numero',
     },
-    codigo: {
+    codigo: {                 /* texto[0] == es numeral   O   texto.startsWith('#') */
         validacion:(texto) => buscarNumeral(texto),
         errorText:'El formato del codigo no es valido'
     }
@@ -260,7 +260,6 @@ const handleSubmit = (event) =>{
 }
 
 formProductosHTML.addEventListener('submit', handleSubmit)
-
 
 
 
