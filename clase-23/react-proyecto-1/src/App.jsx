@@ -55,7 +55,67 @@ El componente Item tendra la sig estructura
 Mostrar el Carrito en el componente App
 */}
 
+/* const ContactPage = () => {
+    return(
+            <h1>Formulario de contacto</h1>
+            <ContactForm/>
+    )
+}
+*/
+
+/* Queremos que h1 y ContactForm tengan un padre contenedor en comun, por ejemplo un <section>, <main>, <div>, etc? */
 
 
 
+/* Si la respuesta es SI */
 
+/* const ContactPage = () => {
+    return(
+        <main>
+            <h1>Formulario de contacto</h1>
+            <ContactForm/>
+        </main>
+    )
+} 
+*/
+
+
+
+/* Si la respuesta es NO */
+
+const ContactPage = () => {
+    return(
+        <>
+            <h1>Formulario de contacto</h1>
+            <ContactForm/>
+        </>
+    )
+} 
+
+const Pages = () => {
+    return(
+        <section>
+            <ContactPage/>
+        </section>
+    )
+}
+/* el html resultante de pages es:
+
+<section>
+    <h1></h1>
+    <form></form>
+</section>
+
+*/
+
+
+/* En caso de una lista (para que no tenga muchos padres innecesarios) */
+const ListItem = () => {
+    return(
+        <li>
+            {/* Pone el codigo que vos quieras */}
+            <h2></h2>
+            <ContactPage/>
+        </li>
+    )
+}

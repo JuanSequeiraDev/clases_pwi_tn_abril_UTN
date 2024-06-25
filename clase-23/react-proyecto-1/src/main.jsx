@@ -18,3 +18,9 @@ ReactDOM.createRoot(document.getElementById('root')).render(
 )
 
 /* Los componentes se invocan con <componente /> */
+
+/* Para mostrar el navegador de vite utilizar el comando:
+
+//                    npm run dev
+
+*/
