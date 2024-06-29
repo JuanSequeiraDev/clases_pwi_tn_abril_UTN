@@ -5,9 +5,9 @@ import { ChatScreen } from './Screens/ChatScreen'
 /* Importamos a la pantalla de chat */
 const App = () => {
     return (
-        <div>
+        <>
             <ChatScreen/>
-        </div>
+        </>
     )
 }
 
