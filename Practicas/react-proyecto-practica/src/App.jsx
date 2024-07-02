@@ -1,7 +1,9 @@
-import react from 'react'
+import react, { useState } from 'react'
 import { ColorCard } from './components/ColorCard/ColorCard'
 import '/src/style.css'
 import { ColorCardList } from './components/ColorCard/ColorCardlist'
+import { Contador } from './components/Contador/Contador'
+import { NewColorCardForm } from './components/NewColorCardForm/NewColorCardForm'
 
 /* const listaArticulos = [                              // Lista JSX
     <div key={1}>
@@ -51,10 +53,32 @@ import { ColorCardList } from './components/ColorCard/ColorCardlist'
             }
         ]  
 
+
+
 const App = () => {
+        /* No usar a document a menos que sea estrictamente necesario */
+
+        const [colorCardInfoList, setColorCardInfoList] = useState(colors_card_info)
+
+
+        const handleSubmitNewColorCard = (e) =>{
+            e.preventDefault()
+        const newColorCard = {
+            colores: [],
+            likes: 0,
+            fecha: e.target.fecha.value,
+            id: 7,
+        }
+        for(let i = 1; i <= 4; i = i + 1){
+            newColorCard.colores.push(e.target['color-' + i].value)
+        }
+        setColorCardInfoList([...colorCardInfoList, newColorCard]) /* Clona el array literalmente, no es lo mismo que referenciar un array, ya que no se le aplican cambios como cuando referenciamos a otro array y lo modificamos */
+    }
     return (
         <>
-        <ColorCardList colors_info={colors_card_info}/>
+        <ColorCardList colors_info={colorCardInfoList}/>
+        <NewColorCardForm handleSubmitNewColorCard={handleSubmitNewColorCard}/> {/* Para que un hijo se comunique con un padre se pueden usar props */}
+        <Contador limit={10}/>
         {/* <section className='color-cards-section'>
             < ColorCard
                 likes={ 3 }
@@ -86,3 +110,24 @@ const App = () => {
 export default App
 
 
+
+
+/* 
+1er Ejercicio:
+Crear un componente contador que renderize:
+
+boton de decrementar
+span con valor de contador
+boton de incrementar 
+
+2da parte
+El decrementar no debe bajar a menos de uno
+
+3era parte
+El incrementar denera estar limitado por una prop llamada limit que recibira el contador
+*/
+
+/* 
+Tarea:
+Agregar a la aplicacion de chat la funcionalidad de escribir nuevos mensajes
+*/

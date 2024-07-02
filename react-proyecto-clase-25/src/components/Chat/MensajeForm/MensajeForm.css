@@ -1,20 +1,25 @@
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
 @import url('https://fonts.googleapis.com/css2?family=Geologica:wght@100..900&display=swap');
 
-*{
+* {
     box-sizing: border-box;
     padding: 0;
     margin: 0;
     font-family: "Geologica", sans-serif;
 }
 
-i{
+i {
     color: #8696A0;
 }
 
-.message-section{
+body{
+    overflow-x: hidden;
+}
+
+.message-section {
     display: flex;
     flex-direction: row;
+    position: absolute;
     width: 80vw;
     height: 8vh;
     margin-left: 20vw;
@@ -22,20 +27,20 @@ i{
     justify-content: space-between;
 }
 
-.message-section .message-hub{
+.message-section .message-hub {
     display: flex;
     flex-direction: row;
     gap: 30px;
 }
 
-div .emotes{
+div .emotes {
     display: flex;
     font-size: 25px;
     align-items: center;
     padding-left: 20px;
 }
 
-.message-section .message-hub .message-input{
+.message-section .message-hub .message-input {
     margin: 8.5px 0;
     padding: 0 10px;
     width: 55vw;
@@ -48,19 +53,19 @@ div .emotes{
     outline: none;
 }
 
-div .clipboard{
+div .clipboard {
     display: flex;
     font-size: 25px;
     align-items: center;
 }
 
-div .camera{
+div .camera {
     display: flex;
     font-size: 25px;
     align-items: center;
 }
 
-.message-section .audio{
+.message-section .audio {
     display: flex;
     flex-direction: row;
     font-size: 25px;
@@ -72,3 +77,24 @@ div .camera{
     background-color: #202C33;
 }
 
+/* width */
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #55555573;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #55555573;
+}
+
+/* Al ultimo mensaje se podria añadir una class segun el id para que se diferencia de los demas y deje un cierto padding para que pueda mostrarse sobre el MensajeForm que tiene posicion absolute */
