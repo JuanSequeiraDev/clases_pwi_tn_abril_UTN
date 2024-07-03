@@ -1,5 +1,6 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { ChatHeaderInfo, ListaMensajes, MensajeForm } from '../components/Chat'
+import './ChatScreen.css'
 
 const MOOK_MENSAJES = [
     {
@@ -21,7 +22,7 @@ const MOOK_MENSAJES = [
     {
         author: 'yo',
         text: 'Sos real? OMG',
-        state: 'no recibido',
+        state: 'visto',
         day: 'hoy',
         hour: '13:17',
         id: '3'
@@ -77,7 +78,7 @@ const MOOK_MENSAJES = [
     {
         author: 'yo',
         text: 'OMG SI ERAS REAL',
-        state: 'visto',
+        state: 'no recibido',
         day: 'hoy',
         hour: '13:17',
         id: '7'
@@ -90,12 +91,27 @@ const MOOK_MENSAJES = [
 /* Pantalla de chat */
 export const ChatScreen = () => {
 
+    const [mensaje, setMensaje] = useState(MOOK_MENSAJES)
+
+
+        const handleSubmitMensaje = (mensajeNuevo) =>{
+            setMensaje([...mensaje,{
+                author: 'yo',
+                text: mensajeNuevo,
+                state:'no recibido',
+                day: 'hoy',
+                hour: '13:18',
+                id: '8',
+            }])
+        }
+    console.log(mensaje)
+
     return (
-        <>
+        <div className='chat-screen'>
             <ChatHeaderInfo/>
-            {/* Este componente hara el mapeo */}
-            <ListaMensajes mook_mensajes={MOOK_MENSAJES}/>
-            <MensajeForm/>
-        </>
+            {/* cambiar siempre el mook mensaje a mensaje, que es la copia con los nuevos agregados */}
+            <ListaMensajes mook_mensajes={mensaje}/>
+            <MensajeForm handleSubmitMensaje={handleSubmitMensaje}/>
+        </div>
     )
 }

@@ -1,10 +1,5 @@
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
 
-*{
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
-}
 
 .fonts{
     color: white;
@@ -29,7 +24,7 @@ div .burbuja{
     background-color: #202C33 ;
     width: 250px;
     border-radius: 15px;
-    overflow: hidden;
+    /* overflow: hidden; */
     padding: 10px 7px;
     height: 80px;
     margin: 10px 10px;

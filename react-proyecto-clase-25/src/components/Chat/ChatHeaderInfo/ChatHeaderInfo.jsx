@@ -3,7 +3,7 @@ import './ChatHeaderInfo.css'
 
 export const ChatHeaderInfo = () => {
     return (
-        <section>
+        <section className='top-section-nav'>
             <nav className='chat-nav'>
                 <div className='user-info'>
                     <div className='arrow'><i class="bi bi-arrow-left"></i></div>

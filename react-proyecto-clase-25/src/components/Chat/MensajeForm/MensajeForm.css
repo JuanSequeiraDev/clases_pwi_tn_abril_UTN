@@ -6,6 +6,8 @@
     padding: 0;
     margin: 0;
     font-family: "Geologica", sans-serif;
+    /* position: relative; */
+    color: white;
 }
 
 i {
@@ -16,31 +18,21 @@ body{
     overflow-x: hidden;
 }
 
-.message-section {
+.message-hub {
     display: flex;
     flex-direction: row;
-    position: absolute;
+    position: fixed;
+    bottom: 0;
     width: 80vw;
     height: 8vh;
     margin-left: 20vw;
     background-color: #202C33;
     justify-content: space-between;
+    padding-left: 100px;
 }
 
-.message-section .message-hub {
-    display: flex;
-    flex-direction: row;
-    gap: 30px;
-}
 
-div .emotes {
-    display: flex;
-    font-size: 25px;
-    align-items: center;
-    padding-left: 20px;
-}
-
-.message-section .message-hub .message-input {
+.message-hub .message-input {
     margin: 8.5px 0;
     padding: 0 10px;
     width: 55vw;
@@ -53,19 +45,7 @@ div .emotes {
     outline: none;
 }
 
-div .clipboard {
-    display: flex;
-    font-size: 25px;
-    align-items: center;
-}
-
-div .camera {
-    display: flex;
-    font-size: 25px;
-    align-items: center;
-}
-
-.message-section .audio {
+.message-hub .audio {
     display: flex;
     flex-direction: row;
     font-size: 25px;
@@ -76,6 +56,27 @@ div .camera {
     border: none;
     background-color: #202C33;
 }
+
+/* div .clipboard {
+    display: flex;
+    font-size: 25px;
+    align-items: center;
+}
+
+div .emotes {
+    display: flex;
+    font-size: 25px;
+    align-items: center;
+    padding-left: 20px;
+}
+
+div .camera {
+    display: flex;
+    font-size: 25px;
+    align-items: center;
+} */
+
+
 
 /* width */
 ::-webkit-scrollbar {
