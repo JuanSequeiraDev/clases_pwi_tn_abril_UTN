@@ -10,7 +10,7 @@ function App() {
     <>
       <Routes>
         <Route path='/' element={<Home />} /> {/* Path determina que ruta se utiliza y element que componente se renderizara en esta ruta */}
-        <Route path='/detail/:productId' element={<Detail />} /> {/* Al copia /detail en localhost dentro de la web se cambia de ruta */}
+        <Route path='/detail/:productId' element={<Detail />} /> {/* Al copiar /detail en localhost dentro de la web se cambia de ruta */}
         <Route path='/contact' element={<Contact />} />
         <Route path='/cart' element={<Cart />} />
       </Routes>

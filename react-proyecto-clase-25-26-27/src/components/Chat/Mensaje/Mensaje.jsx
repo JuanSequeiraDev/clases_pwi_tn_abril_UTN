@@ -7,8 +7,9 @@ import './Mensaje.css'
 
 export const Mensaje = ({mensaje}) => {
     const {author, text, state, day, hour, id} = mensaje
+    console.log(author)
     return (
-        <div className={author} key={id}>
+        <div className={validacionAutor(author)} key={id}>
             <div className="burbuja">
                 <div className="author-name">
                     <span className="author fonts">{author}</span>
@@ -18,7 +19,6 @@ export const Mensaje = ({mensaje}) => {
                 </div>
                 <div className="date-hour-state">
                     <div className="date-hour">
-                        <span className="date fonts">{day}</span>
                         <span className="hour fonts">{hour}</span>
                     </div>
                     <div className={author + " state-box"} >
@@ -41,6 +41,14 @@ const validacionVisto = (estado) => {
     }
 }
 
+const validacionAutor = (autor) => {
+    if(autor == 'yo'){
+        return 'yo'
+    }
+    else{
+        return 'otro'
+    }
+}
 /*
 RAFC = Crea un componente y lo exporta, tambien ambos importan react from react
 RAFCE = Crea un componente y lo exporta por defecto

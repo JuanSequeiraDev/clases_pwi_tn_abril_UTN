@@ -23,19 +23,20 @@ body{
     flex-direction: row;
     position: fixed;
     bottom: 0;
-    width: 80vw;
+    width: 100vw;
     height: 8vh;
-    margin-left: 20vw;
+    /* margin-left: 20vw; */
     background-color: #202C33;
     justify-content: space-between;
-    padding-left: 100px;
+    padding-left: 5vw;
+    padding-right: 5vw;
 }
 
 
 .message-hub .message-input {
     margin: 8.5px 0;
     padding: 0 10px;
-    width: 55vw;
+    width: 85vw;
     height: 40px;
     color: rgb(255, 255, 255);
     background-color: #2A3942;

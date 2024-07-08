@@ -32,6 +32,16 @@ const ColorItemList = ({colors}) =>{
     )
 }
 
+
+
+/* const mensajeItemList = ({mensajes}) =>{
+    return(
+        <>
+            {mensajes.map(mensaje => <Mensaje  />)}
+        </>
+    )
+}*/
+
 const ColorItem = ({color}) =>{
     return(
         <div className="color" style={{backgroundColor: color}} ></div>

@@ -1,8 +1,11 @@
 import React, { useState } from 'react'
 import { ChatHeaderInfo, ListaMensajes, MensajeForm } from '../components/Chat'
 import './ChatScreen.css'
+import { MOOK_CONTACTOS } from '../data'
+import { useParams } from 'react-router-dom'
 
-const MOOK_MENSAJES = [
+
+/* const MOOK_MENSAJES = [
     {
         author: 'yo',
         text: 'Hola pepe',
@@ -83,15 +86,19 @@ const MOOK_MENSAJES = [
         hour: '13:17',
         id: '7'
     },
-]
+] */
 
 
 /* Pasar los mensajes a la lista de mensajes, dicha lista por cada mensae debera crear un componente Mensaje y ese componente recibira cada objeto de mensaje*/
 
 /* Pantalla de chat */
 export const ChatScreen = () => {
+    
+    const {chatId} =useParams()
 
-    const [mensaje, setMensaje] = useState(MOOK_MENSAJES)
+    const contacto = MOOK_CONTACTOS.find(contacto => contacto.userId == chatId)
+    const {chat_mensajes} = contacto
+    const [mensaje, setMensaje] = useState(chat_mensajes)//Introducir un MOOK_MENSAJES aqui
 
 
         const handleSubmitMensaje = (mensajeNuevo) =>{
@@ -104,14 +111,20 @@ export const ChatScreen = () => {
                 id: '8',
             }])
         }
-    console.log(mensaje)
 
     return (
         <div className='chat-screen'>
             <ChatHeaderInfo/>
-            {/* cambiar siempre el mook mensaje a mensaje, que es la copia con los nuevos agregados */}
+            
             <ListaMensajes mook_mensajes={mensaje}/>
             <MensajeForm handleSubmitMensaje={handleSubmitMensaje}/>
         </div>
     )
 }
+/* cambiar siempre el mook mensaje a mensaje, que es la copia con los nuevos agregados */
+
+/* const MensajeReader = (mook_contactos) =>{
+    return(
+        mook_contactos.map((mook_contacto))
+    )
+} */

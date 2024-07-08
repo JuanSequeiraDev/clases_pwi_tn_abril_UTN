@@ -11,7 +11,7 @@ div .yo{
     justify-content: end;
 }
 
-div .pepe{
+div .otro{
     display: flex;
     justify-content: baseline;
 }
@@ -22,12 +22,12 @@ div .pepe{
 
 div .burbuja{
     background-color: #202C33 ;
-    width: 250px;
     border-radius: 15px;
     /* overflow: hidden; */
     padding: 10px 7px;
-    height: 80px;
+    height: 90px;
     margin: 10px 10px;
+    min-width: 15vw;
 }
 
 div .date-hour-state{
@@ -41,6 +41,7 @@ div .date-hour{
     display: flex;
     padding-left: 55px;
     justify-content: end;
+    align-items: end;
     gap: 5px;
     padding-bottom: 3px;
 }
@@ -48,10 +49,6 @@ div .date-hour{
 div .state-box{
     display: flex;
     padding-top: 3px;
-}
-
-.date{
-    font-size: 10px;
 }
 
 .hour{
@@ -66,7 +63,7 @@ div .state-box{
     color: grey;
 }
 
-div .pepe .state-box{
+div .otro .state-box{
     display: none;
     visibility: hidden;
 }

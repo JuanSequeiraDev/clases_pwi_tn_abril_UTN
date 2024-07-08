@@ -1,12 +1,22 @@
 import react from 'react'
 import { ChatScreen } from './Screens/ChatScreen'
+import { Route, Routes } from 'react-router-dom'
+import { MOOK_CONTACTOS } from './data'
+import ContactList from './components/Contacts/ContactList'
+
+
 
 
 /* Importamos a la pantalla de chat */
 const App = () => {
+    console.log()
     return (
         <>
-            <ChatScreen/>
+            
+            <Routes>
+                <Route path='/' element={<ContactList/>}/>
+                <Route path='/chat/:chatId' element={<ChatScreen />}/>
+            </Routes>
         </>
     )
 }

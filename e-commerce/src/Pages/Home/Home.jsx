@@ -28,34 +28,4 @@ const Home = () => {
 
 export default Home
 
-DATA_MOOK =
-    contactos = [
-        {
-            nombre: 'messi',
-            id: 1,
-            mensajes: [
-                {
-                    author: 'yo',
-                    text: 'Hola messi',
-                    state: 'visto',
-                    day: 'hoy',
-                    hour: '13:15',
-                    id: '1'
-                },
-            ]
-        },
-        {
-            nombre: 'pepe',
-            id: 1,
-            mensajes: [
-                {
-                    author: 'yo',
-                    text: 'Hola pepe',
-                    state: 'visto',
-                    day: 'hoy',
-                    hour: '13:15',
-                    id: '1'
-                },
-            ]
-        }
-    ]
+
