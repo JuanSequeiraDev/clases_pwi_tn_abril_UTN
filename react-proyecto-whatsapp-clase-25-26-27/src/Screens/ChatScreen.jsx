@@ -1,8 +1,9 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { ChatHeaderInfo, ListaMensajes, MensajeForm } from '../components/Chat'
 import './ChatScreen.css'
-import { MOOK_CONTACTOS } from '../data'
 import { useParams } from 'react-router-dom'
+import { MOOK_CONTACTOS } from '../data'
+import { getContacts } from '../fetching/getContacts'
 
 
 /* const MOOK_MENSAJES = [
@@ -94,29 +95,54 @@ import { useParams } from 'react-router-dom'
 /* Pantalla de chat */
 export const ChatScreen = () => {
     
+    const [loading, setLoading] = useState(true)
     const {chatId} =useParams()
+    const [contacto, setContacto] = useState({})
 
+    useEffect(
+        ()=> {
+            getContacts().then( /* cambiar obtain por get */
+                (contactos) =>{
+                    const MOOK_MENSAJES = contactos.find(contacto => contacto.userId == chatId)
+                    setContacto(MOOK_MENSAJES)
+                    setLoading(false)
+                }
+            )
+        },
+        []
+    )
+    /* console.log(MOOK_CONTACTOS)
     const contacto = MOOK_CONTACTOS.find(contacto => contacto.userId == chatId)
-    const {chat_mensajes} = contacto
-    const [mensaje, setMensaje] = useState(chat_mensajes)//Introducir un MOOK_MENSAJES aqui
-
-
-        const handleSubmitMensaje = (mensajeNuevo) =>{
-            setMensaje([...mensaje,{
+    console.log(contacto) */
+    
+    
+    const handleSubmitMensaje = (mensajeNuevo) =>{
+        setContacto({...contacto, chat_mensajes:[...contacto.chat_mensajes,
+                {
                 author: 'yo',
                 text: mensajeNuevo,
                 state:'no recibido',
                 day: 'hoy',
                 hour: '13:18',
                 id: '8',
-            }])
-        }
+            }
+        ]
+        })
+    }
 
     return (
         <div className='chat-screen'>
-            <ChatHeaderInfo/>
-            
-            <ListaMensajes mook_mensajes={mensaje}/>
+            {loading
+                    ?<div className="loading-container">
+                        <div className="loading-progress"></div>
+                    </div>
+                :
+                (<>
+                <ChatHeaderInfo/>
+                <ListaMensajes mook_mensajes={contacto.chat_mensajes}/>
+                </>
+                )
+            }
             <MensajeForm handleSubmitMensaje={handleSubmitMensaje}/>
         </div>
     )

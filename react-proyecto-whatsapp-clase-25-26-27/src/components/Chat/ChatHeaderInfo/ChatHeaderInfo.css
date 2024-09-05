@@ -3,7 +3,9 @@
 .top-section-nav{
     display: flex;
     flex-direction: row;
-    position: sticky;z-index: 2;
+    position: sticky;
+    z-index: 2;
+    width: 100vw;
     /* margin-left: 20vw; */
 }
 
@@ -29,8 +31,6 @@ nav .arrow{
 }
 
 .chat-nav .profile-pic{
-    width: 50px;
-    height: 50px;
     overflow: hidden;
     display: flex;
     justify-content: center;
@@ -44,10 +44,10 @@ nav .arrow{
     align-items: center;
 }
 
-img .profile-img{
-    width: 50px;
-    display: flex;
-    flex-direction: row;
+.profile-img{
+    width: 40px;
+    height: 40px;
+    border-radius: 25px;
 }
 
 .top-section-nav .user-info .username-box{
@@ -60,26 +60,12 @@ img .profile-img{
 .chat-nav .call-and-config{
     display: flex;
     flex-direction: row;
-    width: 10vw;
     justify-content: space-between;
     align-items: center;
+    width: 30vw;
 }
 
-.nav-end{
-    font-size: 25px;
+.bi{
+    font-size: 20px;
 }
 
-span .videocall{
-    display: flex;
-    flex-direction: row;
-}
-
-div .phonecall{
-    display: flex;
-    flex-direction: row;
-}
-
-div .options{
-    display: flex;
-    flex-direction: row;
-}

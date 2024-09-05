@@ -1,0 +1,38 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: sans-serif;
+}
+
+/* GRID ITEM es el hijo html que ocupa un espacio en el grid padre, mientras que una GRID CELL es el espacio total reservado para un grid item dentro del grid padre, por lo cual puede abarcar mas espacio que el espacio abarcado con el grid item */
+
+/* Grid area es un conjunto de celdas de grid */
+
+
+/* El display GRID desactiva el margin collapse o sobreposicion de margenes, haciendo que los margenes verticales de 10px se sumen, en vez de unirse para obtener esos 10px */
+
+.grid{
+    display: grid;
+    grid-template-columns: 100px 100px; /* Preset: auto */
+    
+    grid-template-rows:100px 100px 100px;  /* En el orden que se den los valores es el orden de las filas que modifician los mismos */
+
+
+
+    /* direction: rtl; */ /* Las grids se generan a favor del texto */
+}
+
+.grid-item{
+    background-color: #48e;
+    margin: 10px;
+    padding: 10px;
+    font-size: 30px;
+    color: white;
+    width: 45%;
+    border: 2px solid black;
+    /* display: inline;  incluso definiendo otro display a los elementos estos se contendran en filas creadas por el grid*/
+}

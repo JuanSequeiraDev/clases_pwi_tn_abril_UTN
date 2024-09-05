@@ -7,7 +7,7 @@ import './Mensaje.css'
 
 export const Mensaje = ({mensaje}) => {
     const {author, text, state, day, hour, id} = mensaje
-    console.log(author)
+    /* console.log(author) */
     return (
         <div className={validacionAutor(author)} key={id}>
             <div className="burbuja">
@@ -32,11 +32,11 @@ export const Mensaje = ({mensaje}) => {
 
 const validacionVisto = (estado) => {
     if(estado === 'visto'){
-        const state = <i className="bi bi-check2-all state"></i>
+        const state = <i className="bi bi-check2-all state visto"></i>
         return state
     }
     else if(estado === 'no recibido'){
-        const state = <i className="bi bi-check2 state-negative"></i>
+        const state = <i className="bi bi-check2 state-negative visto"></i>
         return state
     }
 }

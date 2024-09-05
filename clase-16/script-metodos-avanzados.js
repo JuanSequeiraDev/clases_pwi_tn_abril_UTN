@@ -259,7 +259,7 @@ const listaDeObjetosHTML = objetos.map(function(objeto){
 const resultadoX = objetos.map(function(objeto){
     return 'pepe'
 })
-console.log(objetos)
+console.log(listaDeObjetosHTML)
 console.log(arrayInverso)
 /* 
 [

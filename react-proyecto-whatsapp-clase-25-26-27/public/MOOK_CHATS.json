@@ -1,0 +1,134 @@
+[
+    {
+        "nombre":"Juan",
+        "img":"https://static.vecteezy.com/system/resources/previews/015/757/192/non_2x/businessman-with-phone-and-suitcase-cartoon-icon-illustration-people-profession-icon-concept-isolated-premium-flat-cartoon-style-vector.jpg",
+        "thumbnail":"Dale, avisame cuando estes.",
+        "ultima_conexion":"ayer",
+        "userId": 1,
+        "chat_mensajes":
+        [
+            {
+                "author": "yo",
+                "text": "Hola juan, hiciste la tarea de ayer?",
+                "state": "visto",
+                "day": "hoy",
+                "hour": "13:15",
+                "id": 1
+            },
+            {
+                "author": "Juan",
+                "text": "Hola amigo, no todavia no la hice",
+                "state": "visto",
+                "day": "hoy",
+                "hour": "13:16",
+                "id": 2
+            },
+            {
+                "author": "yo",
+                "text": "Yo tampoco amigo, si queres en 15 nos conectamos y la hacemos juntos",
+                "state": "visto",
+                "day": "hoy",
+                "hour": "13:17",
+                "id": 3
+            },
+            {
+                "author": "yo",
+                "text": "Te parece?",
+                "state": "visto",
+                "day": "hoy",
+                "hour": "13:17",
+                "id": 4
+            },
+            {
+                "author": "Juan",
+                "text": "Dale, avisame cuando estes.",
+                "state": "visto",
+                "day": "hoy",
+                "hour": "13:17",
+                "id": 9
+            }
+        ]
+    },
+    {
+        "nombre":"Maria",
+        "img":"https://w7.pngwing.com/pngs/869/415/png-transparent-businessperson-cartoon-woman-business-woman-microphone-hand-thumbnail.png",
+        "thumbnail":"Perfecto amiga, mañana nos vemos entonces.",
+        "ultima_conexion":"hoy",
+        "userId": 2,
+        "chat_mensajes":[
+            {
+                "author":"yo",
+                "text":"Hola maria, al final vas a poder ir a la reunion del consejo el finde?",
+                "state":"visto",
+                "day":"ayer",
+                "hour":"12:32",
+                "id":1
+            },
+            {
+                "author":"Maria",
+                "text":"Que tal amigo, casi seguro que puedo, mañana te confirmo",
+                "state":"visto",
+                "day":"ayer",
+                "hour":"12:59",
+                "id":2
+            },
+            {
+                "author":"Maria",
+                "text":"Buen dia amigo, avisale a los del consejo que asisto mañana",
+                "state":"visto",
+                "day":"hoy",
+                "hour":"8:15",
+                "id":3
+            },
+            {
+                "author":"yo",
+                "text":"Perfecto amiga, mañana nos vemos entonces",
+                "state":"visto",
+                "day":"hoy",
+                "hour":"20:22",
+                "id":4
+            }
+        ]
+    },
+    {
+        "nombre":"Pepe",
+        "img":"https://png.pngtree.com/png-vector/20210628/ourmid/pngtree-man-in-the-beach-flat-design-illustration-png-image_3516324.jpg",
+        "thumbnail":"Puerta amigo, sali cuando estes",
+        "ultima_conexion":"hoy",
+        "userId": 3,
+        "chat_mensajes":[
+            {
+                "author":"Pepe",
+                "text":"Que haces amigo el finde salimos con los chicos, te sumas?",
+                "state":"visto",
+                "day":"hace 5 dias",
+                "hour":"11:59",
+                "id":1
+            },
+            {
+                "author":"yo",
+                "text":"De una amigo, ahora confirmo por el grupo. Si queres te paso a buscar",
+                "state":"visto",
+                "day":"hace 5 dias",
+                "hour":"11:59",
+                "id":2
+            },
+            {
+                "author":"Pepe",
+                "text":"Listo perfecto amigo, nos vemos el finde",
+                "state":"visto",
+                "day":"hace 5 dias",
+                "hour":"12:00",
+                "id":3
+            },
+            {
+                "author":"yo",
+                "text":"Puerta amigo, sali cuando estes",
+                "state":"visto",
+                "day":"hoy",
+                "hour":"01:00",
+                "id":4
+            }
+        ]
+    }
+]

@@ -8,7 +8,7 @@ export const MensajeForm = ({handleSubmitMensaje}) => {
         e.preventDefault()
         handleSubmitMensaje(e.target.mensaje.value)
         /* e.target.reset() */
-        console.log(e.target.mensaje.value)
+        console.log(e)
     }
 
     return (
@@ -18,7 +18,7 @@ export const MensajeForm = ({handleSubmitMensaje}) => {
                 <div className='clipboard'><i class="bi bi-paperclip"></i></div>
                 <div className='camera'><i class="bi bi-camera"></i></div> */}
                 <input type="text" name='mensaje' className='message-input'/>
-                <button type="submit" className='audio'><i className="bi bi-send-fill" id='mic'></i></button>
+                <button type="submit" className='send-icon'><i className="bi bi-send-fill"></i></button>
             </form>
         </div>
     )

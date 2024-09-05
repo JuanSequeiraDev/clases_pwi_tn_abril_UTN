@@ -3,64 +3,62 @@
 
 .fonts{
     color: white;
-    font-size: 15px;
+    font-size: 13px;
 }
 
-div .yo{
+.yo{
     display: flex;
     justify-content: end;
 }
 
-div .otro{
+.otro{
     display: flex;
     justify-content: baseline;
+}
+
+.burbuja{
+    background-color: #202C33 ;
+    border-radius: 15px;
+    /* overflow: hidden; */
+    padding: 10px 15px;
+    min-height: 10vh;
+    min-width: 35vw;
+    max-width: 80vw;
+    margin: 10px 10px;
 }
 
 .yo .burbuja{
     background-color: #005C4B ;
 }
 
-div .burbuja{
-    background-color: #202C33 ;
-    border-radius: 15px;
-    /* overflow: hidden; */
-    padding: 10px 7px;
-    height: 90px;
-    margin: 10px 10px;
-    min-width: 15vw;
-}
-
 div .date-hour-state{
     display: flex;
-    align-items: end;
+    align-items: center;
     justify-content: end;
     gap: 5px;
 }
 
 div .date-hour{
-    display: flex;
-    padding-left: 55px;
-    justify-content: end;
-    align-items: end;
     gap: 5px;
-    padding-bottom: 3px;
 }
 
 div .state-box{
     display: flex;
-    padding-top: 3px;
+    height: 10px;
 }
 
 .hour{
     font-size: 10px;
 }
 
-.state{
+.state-box .state{
     color: cadetblue;
+    font-size: 15px;
 }
 
-.state-negative{
+.state-box .state-negative{
     color: grey;
+    font-size: 15px;
 }
 
 div .otro .state-box{
@@ -82,5 +80,5 @@ div .messageText{
     flex-direction: row;
     align-items: center;
     width: 100%;
-    
+    word-break: break-all;
 }

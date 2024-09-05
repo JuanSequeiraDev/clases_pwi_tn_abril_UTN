@@ -4,10 +4,11 @@ import { Mensaje } from '../Mensaje/Mensaje'
 /* Lista de chat */
 
 export const ListaMensajes = ({mook_mensajes}) => {
+    let incrementador = 1
     return (
         <main className='main'>
             {
-                mook_mensajes.map((mook_mensaje) => <Mensaje mensaje={mook_mensaje}/>)
+                mook_mensajes.map((mook_mensaje) => <Mensaje mensaje={mook_mensaje} key={incrementador++}/>)
             }
         </main>
     )

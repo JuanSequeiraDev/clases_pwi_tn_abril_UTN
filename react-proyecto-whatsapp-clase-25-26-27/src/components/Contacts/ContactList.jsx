@@ -1,15 +1,32 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './ContactList.css'
-import { MOOK_CONTACTOS } from '../../data'
-import { Link } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import { MdGroup } from "react-icons/md";
 import { LiaHistorySolid } from "react-icons/lia";
 import { RiChatNewLine } from "react-icons/ri";
 import { HiDotsVertical } from "react-icons/hi";
+import { getContacts } from '../../fetching/getContacts';
 
 
 const ContactList = () => {
+    const [fetchMOOK, setfetchMOOK] = useState([])
+
+    useEffect(
+        ()=> {
+            getContacts().then(
+                (MOOK) =>{
+                    /* console.log('productos' , MOOK) */
+                    setfetchMOOK(MOOK)
+                }
+            )
+        },
+        []
+    )
+    console.log(fetchMOOK)
+
+
     return (
+        <>
         <div className='contact-list'>
             <div className='contact-header'>
                 <div className='img-box'>
@@ -23,7 +40,7 @@ const ContactList = () => {
                 </div>
             </div>
                 <div className='contactos'>
-                {MOOK_CONTACTOS.map(usuario =>{
+                {fetchMOOK.map(usuario =>{
                     return(
                         <Link className='link' to={'/chat/' + usuario.userId}>
                             <div className='contacto' key={usuario.userId}>
@@ -37,19 +54,17 @@ const ContactList = () => {
                                         <span className='last-connection'>{usuario.ultima_conexion}</span>
                                     </div>
                                 </div>
-                                
                             </div>
                         </Link>
                     )
                 })}
             </div>
-            <div className='add-contact'>
-                <div className='contacto'>
-                    <span>+</span>
-                    <span>Añadir contacto</span>
-                </div>
-            </div>
+            
         </div>
+            <div className='add-contact'>
+                <span>+ Añadir contacto</span>
+            </div>
+        </>
     )
 }
 

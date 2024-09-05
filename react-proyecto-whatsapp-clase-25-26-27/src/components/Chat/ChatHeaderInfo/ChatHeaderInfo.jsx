@@ -1,16 +1,30 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import './ChatHeaderInfo.css'
 import { Link, useParams } from 'react-router-dom'
 import { MOOK_CONTACTOS } from '../../../data'
+import { getContacts } from '../../../fetching/getContacts'
 
 
 
 export const ChatHeaderInfo = () => {
     const {chatId} =useParams()
+    const [img, setImg] = useState()
+    const [nombre, setNombre] = useState()
+
+    const idChatReal = chatId - 1
+    useEffect(
+        ()=> {
+            getContacts().then(
+                (MOOK) =>{
+                    setImg(MOOK[idChatReal].img)
+                    setNombre(MOOK[idChatReal].nombre)
+                }
+            )
+        },
+        []
+    )
 
 
-    const contacto = MOOK_CONTACTOS.find(contacto => contacto.userId == chatId)
-    const {img, nombre} = contacto
 
     return (
         <section className='top-section-nav'>

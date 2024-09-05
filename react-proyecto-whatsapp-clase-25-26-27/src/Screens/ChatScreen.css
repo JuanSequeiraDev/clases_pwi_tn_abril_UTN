@@ -1,0 +1,129 @@
+@media screen and (min-width: 760px) {
+    /* Header */
+    .chat-nav .call-and-config{
+        width: 20vw;
+    }
+    
+    .bi{
+        font-size: 20px;
+    }
+    /* Mensajes */
+
+    /* Form */
+}
+
+@media screen and (min-width: 1000px) {
+    /* Header */
+    .profile-img{
+        width: 45px;
+        height: 45px;
+    }
+
+    .top-section-nav .user-info .username-box{
+        font-size: 18px;
+    }
+
+    .chat-nav .call-and-config{
+        width: 15vw;
+    }
+    
+    .bi{
+        font-size: 24px;
+    }
+
+    /* Mensajes */ 
+    div .date-hour{
+        margin-top: 8px;
+    }
+
+    .fonts{
+        color: white;
+        font-size: 14px;
+    }
+
+    .hour{
+        font-size: 12px;
+    }
+
+    .state-box .visto{
+        font-size: 18px;
+    }
+
+    /* Form */
+    .message-hub .message-input {
+        margin: 0;
+        padding: 0 10px;
+        width: 90%;
+        height: 70%;
+        color: rgb(255, 255, 255);
+        background-color: #2A3942;
+        border: none;
+        border-radius: 10px;
+        box-sizing: border-box;
+        outline: none;
+    }
+
+    .send-icon .bi-send-fill{
+        font-size: 24px;
+        padding-right: 25px;
+    }
+}
+
+@media screen and (min-width: 1400px) {
+    /* Header */
+    .profile-img{
+        width: 55px;
+        height: 55px;
+        border-radius: 35px;
+    }
+
+    .top-section-nav .user-info .username-box{
+        font-size: 23px;
+        padding-right: 20px;
+    }
+
+    .chat-nav .call-and-config{
+        width: 13vw;
+    }
+    
+    .bi{
+        font-size: 30px;
+    }
+
+    /* Mensajes */ 
+    div .date-hour{
+        margin-top: 10px;
+    }
+
+    .fonts{
+        color: white;
+        font-size: 19px;
+    }
+
+    .hour{
+        font-size: 15px;
+    }
+
+    .state-box .visto{
+        font-size: 18px;
+    }
+
+    /* Form */
+    .message-hub .message-input {
+        padding: 0 10px;
+        width: 90%;
+        height: 70%;
+        color: rgb(255, 255, 255);
+        background-color: #2A3942;
+        border: none;
+        border-radius: 10px;
+        box-sizing: border-box;
+        outline: none;
+        font-size: 18px;
+    }
+
+    .send-icon .bi-send-fill{
+        font-size: 32px;
+        padding-right: 70px;
+    }
+}

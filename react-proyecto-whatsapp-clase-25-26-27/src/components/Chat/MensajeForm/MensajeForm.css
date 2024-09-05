@@ -22,10 +22,10 @@ body{
     display: flex;
     flex-direction: row;
     position: fixed;
+    align-items: center;
     bottom: 0;
     width: 100vw;
     height: 8vh;
-    /* margin-left: 20vw; */
     background-color: #202C33;
     justify-content: space-between;
     padding-left: 5vw;
@@ -34,10 +34,10 @@ body{
 
 
 .message-hub .message-input {
-    margin: 8.5px 0;
+    margin: 5px 0 5px 0;
     padding: 0 10px;
-    width: 85vw;
-    height: 40px;
+    width: 80%;
+    height: 30px;
     color: rgb(255, 255, 255);
     background-color: #2A3942;
     border: none;
@@ -46,11 +46,9 @@ body{
     outline: none;
 }
 
-.message-hub .audio {
+.send-icon{
     display: flex;
     flex-direction: row;
-    font-size: 25px;
-    margin-right: 100px;
     width: 50px;
     align-items: center;
     justify-content: center;
@@ -58,26 +56,9 @@ body{
     background-color: #202C33;
 }
 
-/* div .clipboard {
-    display: flex;
-    font-size: 25px;
-    align-items: center;
+.send-icon .bi-send-fill{
+    font-size: 20px;
 }
-
-div .emotes {
-    display: flex;
-    font-size: 25px;
-    align-items: center;
-    padding-left: 20px;
-}
-
-div .camera {
-    display: flex;
-    font-size: 25px;
-    align-items: center;
-} */
-
-
 
 /* width */
 ::-webkit-scrollbar {
